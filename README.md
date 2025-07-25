@@ -51,13 +51,14 @@ pip --version
 
 ## 📘 Core Topics
 
-- 🔸 [Data Handling with NumPy & Pandas]([notebooks/tutorial0/tutorial0.ipynb](https://github.com/cereal-with-water/Numpy-Pandas-tutorial))  
+- 🔸 [Data Handling with NumPy & Pandas](https://github.com/cereal-with-water/Numpy-Pandas-tutorial)  
   Learn how to load, clean, and manipulate data using NumPy arrays and Pandas DataFrames.
 
-- 🔸 [Understanding Jupyter Notebooks (`.ipynb`)]([docs/ipynb_guide.md](https://github.com/cereal-with-water/Jupyter-Notebooks-tutorial))  
+- 🔸 [Understanding Jupyter Notebooks (`.ipynb`)](https://github.com/cereal-with-water/Jupyter-Notebooks-tutorial)  
   What are text vs code cells, how to run them, and best practices for documenting your analysis.
 
-- 🔸 [Basic Machine Learning with scikit-learn]([notebooks/tutorial1/tutorial1.ipynb](https://github.com/cereal-with-water/ML-tools-tutorial))  
+- 🔸 [Basic Machine Learning with scikit-learn](https://github.com/cereal-with-water/ML-tools-tutorial)  
   Build your first regression and classification models, split data, and evaluate performance.
 
 ---
+

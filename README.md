@@ -49,6 +49,32 @@ pip --version
 
 ---
 
+## 📦 Recommended Libraries
+
+In Python, you install packages by running:
+```bash
+pip install <package-name>
+```
+
+Before you dive into the notebooks, make sure you have the core data-science libraries installed. You can install them all at once via pip:
+
+```bash
+pip install \
+  numpy \
+  pandas \
+  matplotlib \
+  seaborn \
+  scikit-learn \
+  notebook
+```
+
+Or, if you prefer a single command:
+```
+pip install numpy pandas matplotlib seaborn scikit-learn notebook
+```
+
+---
+
 ## 📘 Core Topics
 
 - 🔸 [Data Handling with NumPy & Pandas](https://github.com/cereal-with-water/Numpy-Pandas-tutorial)  

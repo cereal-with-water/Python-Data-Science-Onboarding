@@ -1,10 +1,11 @@
 # Python-Data-Science-Onboarding
 
-Welcome to the WMU DSC/Developer Club!
-
+Welcome to the WMU DSC/Developer Club!<br>
 This repository is designed to help new members get familiar with the tools and workflows commonly used in our data science projects.
+<br>
+<br>
 
----
+
 
 ## 🚀 Who is this for?
 
@@ -14,23 +15,25 @@ This tutorial assumes you already have *basic Python knowledge*, including:
 - Knowing what a .ipynb Jupyter Notebook file is  
 - Using scikit-learn to build simple machine learning models
 
-> *Don't know Python yet?* No problem!  
-> Start with the resources below before continuing:
->
-> -  [W3Schools Python Tutorial](https://www.w3schools.com/python/)  
-> -  [Google's Python Class](https://developers.google.com/edu/python)  
-> -  [Python for Beginners (YouTube)](https://www.youtube.com/watch?v=K5KVEU3aaeQ&t=56s)
+<details>
+<summary><b>❓Don't know Python yet? No problem!❓</b></summary>
+<br>
+
+>  **Start with the resources below before continuing:**<br>
+> &emsp;&emsp;[W3Schools Python Tutorial](https://www.w3schools.com/python/)  
+> &emsp;&emsp;[Google's Python Class](https://developers.google.com/edu/python)  
+> &emsp;&emsp;[Python for Beginners (YouTube)](https://www.youtube.com/watch?v=K5KVEU3aaeQ&t=56s)  
+</details>
+
 
 <details>
-<summary> 💡<b>Python Installation Guide For Beginners</b></summary>
-
-To follow along with the notebooks in this repository, you need Python installed on your machine.
-
-### 🎥 How to Install Python
+<summary> <b>❓Python Installation Guide For Beginners❓</b></summary>
+<br>
   
- [For macOS](https://www.youtube.com/watch?v=nhv82tvFfkM)  
- [For Windows](https://www.youtube.com/watch?v=YagM_FuPLQU)
-
+> ### To follow along with the notebooks in this repository, you need Python installed on your machine.
+> ### 🎥 How to Install Python
+> &emsp;&emsp;  [For macOS](https://www.youtube.com/watch?v=nhv82tvFfkM)  
+> &emsp;&emsp;  [For Windows](https://www.youtube.com/watch?v=YagM_FuPLQU)<br><br>
 > 📌 *Important*: During installation, make sure to check:  
 >  *“Add Python to PATH”*
 
@@ -42,10 +45,11 @@ After installing, open a terminal (or Command Prompt on Windows), and run:
 python --version
 pip --version
 ```
-
 </details>
+<br>
+<br>
 
----
+
 
 ## 📦 Recommended Libraries
 
@@ -65,20 +69,16 @@ pip install \
   scikit-learn \
   notebook
 ```
+<br>
+<br>
 
-Or, if you prefer a single command:
-```
-pip install numpy pandas matplotlib seaborn scikit-learn notebook
-```
 
----
 
 ## 📘 Core Topics
 
 <details>
 <summary> <b>🔥Data Handling with NumPy & Pandas🔥</b></summary>
  Learn how to load, clean, and manipulate data using NumPy arrays and Pandas DataFrames.
-  # Numpy & Pandas
 
 ## 🔍 Library Overview
 
@@ -150,15 +150,14 @@ stacked = np.vstack([c, d])      # vertical stack of two 2×3 arrays
 
 
 ```
+</details>
 
 
- 
- </details>
 
 <details>
 <summary> <b>🔥Understanding Jupyter Notebooks (.ipynb)</b>🔥</summary>
-  What are text vs code cells, how to run them, and best practices for documenting your analysis.
-  # 📝 Jupyter Notebook Quickstart Guide
+What are text vs code cells, how to run them, and best practices for documenting your analysis.
+# 📝 Jupyter Notebook Quickstart Guide
 
 This guide will introduce you to Jupyter Notebook—from “what it is” to how to install and use it locally or in the cloud—then walk you through basic operations, hands-on examples, Markdown usage, and sharing.
 
@@ -209,14 +208,14 @@ Google Colab
 1. Go to colab.research.google.com
 2. Sign in with your Google account
 3. Open or upload any .ipynb file
+</details>
 
 
- 
- </details>
 
 <details>
 <summary> <b>🔥Basic Machine Learning with scikit-learn</b>🔥</summary>
-  Build your first regression and classification models, split data, and evaluate performance.</details>
+  Build your first regression and classification models, split data, and evaluate performance.
+</details>
 
 ---
 

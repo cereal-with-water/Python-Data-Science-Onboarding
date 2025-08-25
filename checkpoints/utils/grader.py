@@ -1,3 +1,4 @@
+# utils/grader.py
 import os
 import numpy as np
 import pandas as pd
@@ -7,7 +8,7 @@ import matplotlib.pyplot as plt
 def _fail(msg):
     raise AssertionError(msg)
 
-# generic/NumPy/pandas
+# Generic / NumPy / pandas
 def check_array(arr, shape=None, dtype=None, allow_int_any=False):
     if not isinstance(arr, np.ndarray):
         _fail(f"❌ Expected numpy.ndarray, got {type(arr)}")
@@ -58,7 +59,7 @@ def check_file_exists(path):
         _fail(f"❌ File not found: {path}")
     print("✅ File exists.")
 
-#  Matplotlib/Seaborn helpers for checkpoint 03 
+# Matplotlib / Seaborn helpers
 def check_axes_instance(ax):
     if not hasattr(ax, "get_xlabel") or not hasattr(ax, "get_ylabel"):
         _fail(f"❌ Expected a Matplotlib Axes-like object, got {type(ax)}")
@@ -99,3 +100,69 @@ def check_num_patches(ax, expected_n):
     if n != expected_n:
         _fail(f"❌ Expected {expected_n} patch(es), got {n}")
     print("✅ Number of patches ok.")
+
+# Plotly helpers
+def check_figure(fig):
+    try:
+        import plotly.graph_objects as go
+    except Exception as e:
+        _fail(f"❌ Plotly not installed: {e}")
+    if not isinstance(fig, go.Figure):
+        _fail(f"❌ Expected plotly.graph_objects.Figure, got {type(fig)}")
+    print("✅ Figure instance ok.")
+
+def check_trace_count(fig, expected_min=None, expected_max=None):
+    n = len(fig.data)
+    if expected_min is not None and n < expected_min:
+        _fail(f"❌ Too few traces: got {n}, expected >= {expected_min}")
+    if expected_max is not None and n > expected_max:
+        _fail(f"❌ Too many traces: got {n}, expected <= {expected_max}")
+    print("✅ Trace count ok.")
+
+def _get_axis(fig, axis):
+    if axis == 'x':
+        return fig.layout.xaxis
+    elif axis == 'y':
+        return fig.layout.yaxis
+    else:
+        _fail("❌ axis must be 'x' or 'y'")
+
+def check_axis_title(fig, axis='x', expected=None):
+    ax = _get_axis(fig, axis)
+    title = getattr(ax.title, "text", "") if ax.title else ""
+    if expected is None:
+        _fail("❌ expected title text is None")
+    if expected != title and (expected not in title):
+        _fail(f"❌ {axis}-axis title mismatch. Got '{title}', expected '{expected}' (or containing it).")
+    print(f"✅ {axis.upper()} axis title ok.")
+
+def check_layout_title_contains(fig, keyword):
+    title = getattr(fig.layout.title, "text", "") if fig.layout.title else ""
+    if keyword not in title:
+        _fail(f"❌ Layout title does not contain '{keyword}'. Got '{title}'")
+    print("✅ Layout title contains keyword.")
+
+def check_bar_count(fig, expected):
+    if len(fig.data) == 0:
+        _fail("❌ No traces in figure.")
+    trace = fig.data[0]
+    xs = getattr(trace, "x", None)
+    if xs is None:
+        _fail("❌ Bar trace has no x values.")
+    n = len(xs)
+    if n != expected:
+        _fail(f"❌ Expected {expected} bars, got {n}")
+    print("✅ Bar count ok.")
+
+def check_trace_modes(fig, must_include='lines'):
+    if len(fig.data) == 0:
+        _fail("❌ No traces in figure.")
+    modes = []
+    for t in fig.data:
+        mode = getattr(t, "mode", None)
+        if mode:
+            modes.append(mode)
+    joined = ",".join(modes)
+    if must_include not in joined:
+        _fail(f"❌ Required mode '{must_include}' not found in traces. Got modes: {modes}")
+    print("✅ Trace mode ok.")

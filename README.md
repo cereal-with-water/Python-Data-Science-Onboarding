@@ -213,9 +213,79 @@ stacked = np.vstack([c, d])      # vertical stack of two 2×3 arrays
 
 
 <details>
-<summary> <b>🔥Basic Machine Learning with scikit-learn</b>🔥</summary>
-  Build your first regression and classification models, split data, and evaluate performance.
-</details>
+<summary> <b>🔥Basic Machine Learning with scikit-learn🔥</b></summary>
+Build your first regression and classification models, split data, and evaluate performance.
 
+## 🔍 Library Overview
+scikit-learn is one of the most widely used ML libraries in Python.  
+It provides simple APIs for preprocessing, training models, and evaluating performance.
+
+### ✨ Key Features
+- Large collection of supervised & unsupervised algorithms  
+- Easy dataset splitting, scaling, and pipelines  
+- Built-in metrics for evaluation  
+- Works seamlessly with NumPy & pandas  
+
+---
+
+### 1. What
+> **What you will learn in this section.**  
+> By the end of this notebook, you will be able to:  
+> - Split data into train/test sets  
+> - Train a simple regression model  
+> - Train a classification model  
+> - Evaluate predictions using accuracy and error metrics  
+
+---
+
+### 2. Why
+> **Why this topic matters.**  
+> - Machine Learning is the core of many data science projects.  
+> - scikit-learn offers a consistent interface to try many models quickly.  
+> - Understanding the ML workflow (split → train → predict → evaluate) is essential.  
+
+---
+
+### 3. How
+> **How to do it.**  
+> Follow these hands-on examples:
+
+```python
+from sklearn.datasets import load_iris, make_regression
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression, LogisticRegression
+from sklearn.metrics import mean_squared_error, accuracy_score
+import numpy as np
+
+# --- Regression Example ---
+# Generate synthetic data
+X_reg, y_reg = make_regression(n_samples=100, n_features=1, noise=10, random_state=42)
+
+# Train/test split
+X_train, X_test, y_train, y_test = train_test_split(X_reg, y_reg, test_size=0.2, random_state=42)
+
+# Fit linear regression
+reg = LinearRegression()
+reg.fit(X_train, y_train)
+
+# Predict and evaluate
+y_pred = reg.predict(X_test)
+print("MSE (Regression):", mean_squared_error(y_test, y_pred))
+
+
+# --- Classification Example ---
+iris = load_iris()
+X_clf, y_clf = iris.data, iris.target
+
+X_train, X_test, y_train, y_test = train_test_split(X_clf, y_clf, test_size=0.2, random_state=42)
+
+clf = LogisticRegression(max_iter=200)
+clf.fit(X_train, y_train)
+
+y_pred = clf.predict(X_test)
+print("Accuracy (Classification):", accuracy_score(y_test, y_pred))
+
+```
+</details>
 
 
